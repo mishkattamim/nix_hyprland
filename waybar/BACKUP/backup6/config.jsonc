@@ -1,0 +1,279 @@
+// -*- mode: jsonc -*-
+{
+    //"output": "HDMI-A-1",
+    //"layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "reload_style_on_change": true,
+    "height": 30, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": -2, // Gaps between modules (4px)
+    "modules-left": [
+  "custom/applications",
+  "cpu",
+  "memory",
+  "custom/seperator",
+	//"wlr/taskbar",
+  "hyprland/window"
+    ],
+    "modules-center": [
+      "hyprland/submap",
+      "custom/splitint",
+      "hyprland/workspaces"
+    ],
+    "modules-right": [
+  "group/expand",
+	"network",
+  "custom/bluetooth-status",
+  //"group/backlightnslider"
+  "backlight",
+	"group/pulseaudionslider",
+  "battery",
+  "custom/seperator_2",
+  "clock",
+  "custom/swaync"
+    ],
+       "hyprland/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": true,
+         "warp-on-scroll": false,
+         "format": "{name}",
+           "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         }
+     },
+
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "hyprland/submap": {
+        "format": "<span style=\"italic\">{}</span>",
+	"tooltip": false
+    },
+
+
+"custom/seperator": {
+    "format": "<span font='JetBrainsMono Nerd Font Bold 9.5'> |</span>",
+    "tooltip": false
+},
+
+"custom/seperator_2": {
+    "format": "<span font='JetBrainsMono Nerd Font Bold 9.5'> |</span>",
+    "tooltip": false
+},
+
+
+"wlr/taskbar": {
+  "all-outputs": false,
+  "icon-size": 16.5,
+	"tooltip": true,
+	"format": "{icon}", //{title}
+	"tooltip-format": "{name}\nAPPID: {app_id}\nWindow State: {state} [{short_state}] \n\n{name}",
+  "on-click-middle": "close",
+  "on-click": "minimize-raise",
+  "sort-by-app-id": false,
+  "markup": true
+},
+
+
+"hyprland/window": {
+  "separate-outputs": true,
+	"format": "<span font ='JetBrainsMono Nerd Font Bold'>{title}</span>",
+	"icon": true,
+	"icon-size": 19,
+	"tooltip-format": "{title}\n\n{class}, {initialClass}",
+	"expand": false,
+  "tooltip": true
+    },
+
+    "custom/expander": {
+      "format": "<span font='JetBrainsMono Nerd Font Bold 8.5'> </span>",
+      "tooltip": false
+    },
+
+  "group/pulseaudionslider": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio", "pulseaudio/slider"]
+  },
+
+  "group/backlightnslider": {
+    "orientation": "horizontal",
+    "modules": ["backlight", "backlight/slider"]
+  },
+
+    "group/expand": {
+      "orientation": "horizontal",
+      "drawer": {
+          "transition-duration": 600,
+          "transition-to-left": true,
+          "click-to-reveal": true
+    },
+    "modules": ["custom/expander", "tray"]
+
+
+        },
+    "tray": {
+        "icon-size": 18.0,
+        "spacing": 12
+    },
+
+    "clock": {
+        /*"timezone": "America/x",*/
+        "interval": 1,
+	      "tooltip-format": "<big>{:%Y %B, %d | %A\n%r}</big>\n\n<tt><big>{calendar}</big></tt>",
+        "format": "<span font='JetBrainsMono NF Bold 9.5'>{:%a %b %d  %I:%M %p}</span>"
+    },
+
+    "custom/applications": {
+      "format": "   <span font='JetBrainsMono NF Bold 9.5'>{}</span>",
+      "exec": "uptime -p | sed -E 's/up //; s/([0-9]+) day(s)?(,? )?/\\1d /g; s/([0-9]+) hour(s)?(,? )?/\\1h /g; s/([0-9]+) minute(s)?/\\1m/; s/ +/ /g; s/ $//'",
+      "interval": 60,
+      "on-click": "pkill -x wofi || wofi -I --show drun",
+      "on-click-right": "hyprctl dispatch overview:toggle",
+
+      "tooltip": false
+    },
+
+    "cpu": {
+        "format": "  {usage}%",
+      	"interval": 5,
+        "tooltip-format": "{usage{n}}"
+    },
+
+    "memory": {
+        "format": "  {percentage}%",
+	      "interval": 10,
+	      "tooltip-format": "Avail: {used}GiB of {avail}GiB\nSWAP: {swapUsed}GiB of {swapTotal}GiB\nTotal Used: {total}GiB"
+    },
+
+    "temperature": {
+        "tooltip-format": "Temperature from thermal zone\n	     {temperatureC}°C",
+	      // "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 85,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", ""]
+    },
+
+    "battery": {
+        "states": {
+            "good": 75,
+            "warning": 35,
+            "critical": 30
+        },
+	      "interval": 2,
+        "format": "{icon}  {capacity}%",
+        "format-full": "{icon}  {capacity}%",
+        "format-charging": " + {capacity}%",
+        "format-plugged": "<  - {capacity}%",
+        "format-tooltip": "{capacity}%\n{time}",
+        "format-icons": ["", "", "", "", ""]
+   },
+
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{icon}  ({signalStrength}%) {essid}",
+        "format-ethernet": "   ({ifname}) Wired",
+        "tooltip-format": "{ipaddr} on {ifname}\nessid: {essid}, ({signalStrength}%)\n{bandwidthUpBits}    {bandwidthDownBits}",
+        "format-linked": "󰌙  Unknown",
+        "format-disconnected": "󰌙  Disconnected", /* 󱄁*/
+	      "on-click": "foot -e --title=nmtui-foot nmtui",
+	      //"on-click": "nm-connection-editor",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+
+    },
+
+    "pulseaudio": {
+        "format": "{format_source}{icon}",
+        "format-bluetooth": "{icon}     {volume}%",
+        "format-muted": "{format_source}",
+        "format-bluetooth-muted": "   {format_source}",
+        "format-source": "  {volume}%   ",
+        "format-source-muted": "    ",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "on-click": "pkill -x pavucontrol || pavucontrol",
+        "on-click-right": "pamixer -t"
+  
+    },
+
+    "pulseaudio/slider": {
+      "min": 0,
+      "max": 120,
+      "orientation": "horizontal"
+    },
+
+    "backlight": {
+        //"device": "amdgpu_bl2",
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tooltip": "true",
+        "tooltip-format": "Backlight: {percent}%"
+    },
+
+    "backlight/slider": {
+      "min": 0,
+      "max": 100,
+      "orientation": "horizontal",
+      //"device": "amdgpu_bl2"
+    },
+
+    "custom/splitint": {
+      "format": "<span font='JetBrainsMono NF Bold'>{}</span>",
+      "exec": "~/.config/hypr/Scripts/Waybar/force_split_output-waybar.sh",
+      "interval": 1,
+      "on-click": "~/.config/hypr/Scripts/Waybar/force_split_toggle.sh",
+      "tooltip": false
+    },
+
+    "custom/bluetooth-status": {
+      "format": "<span font='JetBrainsMono Nerd Font 12.0'>{}</span>",
+      "exec": "~/.config/hypr/Scripts/Waybar/bluetooth_status.sh",
+      "tooltip": false,
+      "interval": 2,
+      "on-click": "foot -e bluetoothctl"
+    },
+
+    "custom/swaync": {
+      "tooltip" : false,
+        "format" : "{icon}   "    ,
+        "on-click" : "swaync-client -t",
+        "menu": "on-click-right",
+        "menu-file": "~/.config/waybar/context/ctlcenter.xml",
+        "menu-actions": {
+            "action-1-1": "hyprctl dispatch exec '[float] alacritty -e htop'",
+            "action-1-2": "hyprctl dispatch exec '[float] alacritty -e nvtop'",
+            "action-1-3": "hyprctl dispatch exec '[float] alacritty -e pkexec powertop'",
+            "action-1-4": "hyprctl dispatch exec '[float] missioncenter'",
+
+            "action-2-1": "hyprctl dispatch exec nwg-look",
+            "action-2-2": "hyprctl dispatch exec qt6ct",
+            "action-2-3": "hyprctl dispatch exec kvantummanager",
+
+
+            "action-3-1": "hyprctl keyword monitor 'eDP-1,1920x1080@60, auto,1'",
+  			"action-3-2": "hyprctl keyword monitor 'eDP-1,1920x1080@90, auto,1'",
+  			"action-3-3": "hyprctl keyword monitor 'eDP-1,1920x1080@144,auto,1'",
+
+            "action-4-1": "hyprctl dispatch exec ~/.local/bin/toggle_caffeine shutdown",
+            "action-4-2": "hyprctl dispatch exec ~/.local/bin/toggle_caffeine handle-lid-switch",
+
+            "action-5": "hyprctl dispatch exec ~/.local/bin/ultra_powersafe_mode",
+            "action-6": "hyprctl reload"
+    }
+    }
+}

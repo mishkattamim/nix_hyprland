@@ -1,0 +1,128 @@
+[2025-10-23 14:57:04.600] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 14:57:04.606] [info] Discovered appearance 'dark'
+[2025-10-23 14:57:04.654] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 14:57:04.674] [info] Hyprland IPC starting
+[2025-10-23 14:57:04.677] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 14:57:04.678] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 14:57:04.679] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 14:57:04.858] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 14:57:35.459] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 14:57:35.462] [info] Discovered appearance 'dark'
+[2025-10-23 14:57:35.491] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 14:57:35.503] [info] Hyprland IPC starting
+[2025-10-23 14:57:35.507] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 14:57:35.508] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 14:57:35.508] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 14:57:35.674] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 14:57:44.978] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 14:57:44.988] [info] Discovered appearance 'dark'
+[2025-10-23 14:57:45.035] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 14:57:45.058] [info] Hyprland IPC starting
+[2025-10-23 14:57:45.060] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 14:57:45.061] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 14:57:45.062] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 14:57:45.258] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 14:57:53.461] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 14:57:53.469] [info] Discovered appearance 'dark'
+[2025-10-23 14:57:53.533] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 14:57:53.563] [info] Hyprland IPC starting
+[2025-10-23 14:57:53.567] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 14:57:53.568] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 14:57:53.569] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 14:57:53.775] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 14:58:01.754] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 14:58:01.764] [info] Discovered appearance 'dark'
+[2025-10-23 14:58:01.830] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 14:58:01.849] [info] Hyprland IPC starting
+[2025-10-23 14:58:01.854] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 14:58:01.856] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 14:58:01.857] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 14:58:02.077] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 14:58:10.130] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 14:58:10.140] [info] Discovered appearance 'dark'
+[2025-10-23 14:58:10.212] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 14:58:10.230] [info] Hyprland IPC starting
+[2025-10-23 14:58:10.233] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 14:58:10.234] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 14:58:10.237] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 14:58:10.456] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 14:58:20.360] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 14:58:20.363] [info] Discovered appearance 'dark'
+[2025-10-23 14:58:20.394] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 14:58:20.403] [info] Hyprland IPC starting
+[2025-10-23 14:58:20.404] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 14:58:20.404] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 14:58:20.405] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 14:58:20.560] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 15:00:28.883] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 15:00:28.889] [info] Discovered appearance 'dark'
+[2025-10-23 15:00:28.941] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 15:00:28.955] [info] Hyprland IPC starting
+[2025-10-23 15:00:28.956] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 15:00:28.957] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 15:00:28.957] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 15:00:29.153] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 15:01:26.907] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 15:01:26.910] [info] Discovered appearance 'dark'
+[2025-10-23 15:01:26.961] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 15:01:26.974] [info] Hyprland IPC starting
+[2025-10-23 15:01:26.976] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 15:01:26.977] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 15:01:26.979] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 15:01:27.157] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 15:03:34.145] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 15:03:34.148] [info] Discovered appearance 'dark'
+[2025-10-23 15:03:34.201] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 15:03:34.213] [info] Hyprland IPC starting
+[2025-10-23 15:03:34.215] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 15:03:34.216] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 15:03:34.218] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 15:03:34.413] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 15:03:50.136] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 15:03:50.140] [info] Discovered appearance 'dark'
+[2025-10-23 15:03:50.194] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 15:03:50.223] [info] Hyprland IPC starting
+[2025-10-23 15:03:50.225] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 15:03:50.226] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 15:03:50.229] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 15:03:50.424] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 15:03:55.261] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 15:03:55.270] [info] Discovered appearance 'dark'
+[2025-10-23 15:03:55.340] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 15:03:55.362] [info] Hyprland IPC starting
+[2025-10-23 15:03:55.363] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 15:03:55.364] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 15:03:55.365] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 15:03:55.565] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 15:04:04.995] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 15:04:04.998] [info] Discovered appearance 'dark'
+[2025-10-23 15:04:05.032] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 15:04:05.042] [info] Hyprland IPC starting
+[2025-10-23 15:04:05.043] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 15:04:05.044] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 15:04:05.044] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 15:04:05.194] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 15:04:13.308] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 15:04:13.312] [info] Discovered appearance 'dark'
+[2025-10-23 15:04:13.360] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 15:04:13.372] [info] Hyprland IPC starting
+[2025-10-23 15:04:13.374] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 15:04:13.375] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 15:04:13.378] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 15:04:13.540] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 15:04:20.837] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 15:04:20.840] [info] Discovered appearance 'dark'
+[2025-10-23 15:04:20.875] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 15:04:20.885] [info] Hyprland IPC starting
+[2025-10-23 15:04:20.886] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 15:04:20.887] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 15:04:20.887] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 15:04:21.039] [info] Bar configured (width: 1920, height: 30) for output: eDP-1
+[2025-10-23 15:08:57.141] [info] Using configuration file /home/ryuuma/.config/waybar/config.jsonc
+[2025-10-23 15:08:57.162] [info] Discovered appearance 'dark'
+[2025-10-23 15:08:57.232] [info] Using CSS file /home/ryuuma/.config/waybar/style.css
+[2025-10-23 15:08:57.260] [info] Hyprland IPC starting
+[2025-10-23 15:08:57.264] [info] Loading persistent workspaces from Waybar config
+[2025-10-23 15:08:57.264] [info] Loading persistent workspaces from Hyprland workspace rules
+[2025-10-23 15:08:57.265] [warning] 'swap-icon-label' must be a bool.
+[2025-10-23 15:08:57.466] [info] Bar configured (width: 1920, height: 30) for output: eDP-1

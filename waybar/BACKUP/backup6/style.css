@@ -1,0 +1,311 @@
+@import url("/home/ryuuma/.cache/wal/colors-waybar.css");
+
+* {
+    font-family: JetBrainsMonoNerdFont, NotoFontsEmoji, FontAwesome;
+    font-size: 15.0px;
+    min-height: 0px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+window#waybar {
+    background: alpha(@background, 0.80);
+    color: @foreground;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.empty #window {
+  background-color: transparent
+}
+
+/*window#waybar.empty {
+  border-bottom: 1px solid alpha(@foreground, 0.35);
+ box-shadow: inset 0 -1.5px 0 alpha(@background, 0.70);
+}*/
+
+#custom-swaync,
+#custom-applications {
+  margin-right: 2px;
+  text-shadow: 0px 0px 2px alpha(@color6, .3);
+}
+
+#custom-applications {
+  margin-left: -2px;
+}
+
+#custom-bluetooth-status {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#custom-expander {
+  margin-right: 4px;
+  text-shadow: 0px 0px 2px alpha(@foreground, .5)
+}
+
+#custom-seperator_2,
+#custom-seperator {
+    margin-top: 1px;
+    color: alpha(@foreground, 0.25);
+}
+
+window#waybar.empty #custom-seperator {
+  color: transparent
+}
+
+#custom-expander,
+#custom-pacman-updates {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+#custom-expander:hover,
+#custom-pacman-updates:hover {
+  color: @color1;
+  transition: color .12s ease-in
+}
+
+#custom-pacman-updates {
+  margin-left: -0px;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces {
+    /*background: alpha(@background, 0.55) 55%;*/
+    margin-top: 1px;
+    margin-bottom: 1px;
+    border-radius: 6px;
+}
+
+#workspaces button {
+    text-shadow: 0px 0px 2px alpha(@color6, .2);
+    padding: 0 5px;
+    color: @color15;
+    transition: color .10s linear
+}
+
+#workspaces button:hover,
+#workspaces button.active {
+  background: linear-gradient(
+    180deg,
+    alpha(@color6, 0.90) 50%,
+    alpha(@color6, 0.85)
+    );
+  color: @background;
+  border-radius: 5px;
+  box-shadow: inset 0 0px @transparent; /* Fixes glitch when hover */
+  box-shadow: 0px 0px 5px alpha(@background, .5);
+  text-shadow: 0px 0px 5px alpha(@background, .5);
+  margin-top: 1px;
+  margin-bottom: 1px;
+  transition: border-radius .10s linear
+}
+
+#workspaces button.urgent {
+    color: @color1;
+}
+
+#window,
+#taskbar {
+margin-left: 8px;
+}
+
+#window {
+  text-shadow: 0px 0px 2px alpha(@color6, .2);
+  color: @foreground;
+  transition: text-shadow 1s ease-in
+}
+
+#taskbar button {
+  text-shadow: 0px 0px 2px alpha(@color6, .2);
+	border-top: 1.5px solid alpha(@color6, 0.55);
+	margin-left: 1px;
+	margin-right: 1px;
+  padding-left: 12px;
+  padding-right: 8px;
+  color: @foreground;
+	transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+#taskbar button.active {
+	border-top: 1.5px solid @color3;
+  background: alpha(@background, 0.45) 45%;
+}
+
+#taskbar button:hover {
+  border-top: 1.5px solid @color3;
+  box-shadow: inset 0 0px @transparent; /* Fixes glitch when hover */
+}
+
+#clock {
+  margin-left: 2px
+}
+
+#custom-uptime,
+#temperature,
+#cpu,
+#memory,
+#custom-splitint,
+#custom-applications,
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#backlight,
+#tray,
+#submap {
+    color: @foreground;
+    padding: 0 10px;
+    text-shadow: 0px 0px 2px alpha(@color6, .2);
+}
+
+#custom-uptime:hover,
+#window:hover,
+#custom-bluetooth-status:hover,
+#custom-splitint:hover,
+#custom-swaync:hover,
+#custom-applications:hover,
+#network:hover,
+#clock:hover,
+#cpu:hover,
+#memory:hover, 
+/*#pulseaudio:hover,*/
+#pulseaudionslider:hover,
+#pulseaudionslider:hover #pulseaudio,
+#backlight:hover,
+#battery:hover,
+#temperature:hover {
+  border-radius: 6px;
+	background-color: @color6;
+	color: @background;
+  transition: all .12s ease-in
+
+}
+
+#custom-splitint {
+  color: @color6
+}
+
+#submap {
+  background: linear-gradient(
+    180deg,
+    alpha(@color1, 0.90) 50%,
+    alpha(@color1, 0.85)
+    );
+  color: @background;
+  border-radius: 6px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  transition: all .30s ease-in
+}
+
+@keyframes battery_blink {
+    to {
+        color: @foreground;
+        color: @color1;
+    }
+}
+
+#battery {
+  margin-right: -3px
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+ animation-name: battery_blink;
+ animation-duration: 2.5s;
+ animation-timing-function: linear;
+ animation-iteration-count: infinite;
+ animation-direction: alternate;
+}
+
+#battery.charging {
+    color: @color6
+}
+
+#network.wifi {
+  margin-right: 4px;
+}
+
+#network.disconnected {
+  color: @color1
+}
+
+#pulseaudio {
+  color: @color6;
+}
+
+#pulseaudio.muted {
+    color: @color1;
+}
+
+#backlightnslider,
+#pulseaudionslider {
+  margin-right: -2px;
+  margin-top: -5px;
+  margin-bottom: -5px;
+  background: transparent;
+  transition: all 0.5s;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+  min-height: 0px;
+  min-width: 0px;
+  background: @color6;
+  border: none;
+  box-shadow: 0px 0px 2px alpha(@color6, .2);
+}
+
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+  margin-left: -4px;
+  min-height: 8px;
+  min-width: 50px;
+  border-radius: 2px;
+  border: none;
+  background: @color3;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 2px;
+  border: 0px solid @background;
+  background: @color6;
+}
+
+#backlight {
+}
+
+#cpu {
+}
+
+#memory {
+  margin-right: -2px;
+}
+
+#tray {
+  padding: 0px 6px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @color1;
+}

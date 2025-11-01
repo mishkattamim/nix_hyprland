@@ -1,0 +1,141 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", 
+    "position": "top", 
+    "height": 30, 
+    "spacing": 4, 
+
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/sep",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "custom/sep",
+        "clock",
+        "custom/sep"
+    ],
+
+    "modules-right": [
+        "custom/sep",
+        "custom/wallpaper",
+        "backlight",
+        "wireplumber",
+        "custom/sep",
+        "cpu",
+        "custom/sep",
+        "memory",
+        "custom/sep",
+        "network",
+        "custom/sep",
+        "battery"
+    ],
+
+    // Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*" : 7
+        }
+    },
+    "hyprland/window" : {
+        "max-length": 25,
+        "seperate-outputs": false
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+        // "icons": {
+        //   "blueman": "bluetooth",
+        //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+        // }
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "CPU: {usage}%",
+        "interval": 2,
+        "tooltip": true,
+        "on-click": "kitty -e btop"
+    },
+    "memory": {
+        "format": "Mem: {used}GiB",
+        "interval": 2,
+        "tooltip": true,
+        "on-click": "kitty -e btop"
+    },
+    "disk": {
+        "interval": 60,
+        "path": "/",
+        "format": "Disk: {free}"
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "Bat: {capacity}%",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "Bat {capacity}%",
+        "format-time": "{H}:{M}"
+        
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": " Eth",
+        "format-disconnected": "⚠ Disconnected",
+        "tooltip": true,
+        "interval": 5,
+        "on-click": "kitty -e nmtui"
+    },
+    "custom/wallpaper": {
+    "format": "{}",
+    "return-type": "json",
+    "exec-on-event": true,
+    "interval": "once",
+    "tooltip": true,
+    "exec": "echo '{\"text\": \" :Wall\", \"tooltip\": \"Click to change wallpaper\"}'",
+    "on-click": "/home/ryuuma/.config/waybar/scripts/theme-switcher.sh"
+},
+"group/brightvol": {
+        "orientation": "horizontal",
+        "modules": [
+            "backlight",
+            "custom/split",
+            "wireplumber"
+        ]
+    },
+    "backlight": {
+        "format": "{icon}:{percent}%",
+        "format-icons": [" ", " ", "🌙"]
+    },
+    "wireplumber": {
+        "scroll-step": 5,
+        "format": "{icon}{volume}%",
+        "format-bluetooth": "{icon}{volume}% ",
+        "format-bluetooth-muted": " {icon}",
+        "format-muted": "       ",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["  :", "  :", "  :"]
+        },
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+    "custom/sep": {
+        "format" : "|",
+        "interval" : 0
+    }
+}
