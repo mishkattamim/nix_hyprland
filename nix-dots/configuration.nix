@@ -1,19 +1,27 @@
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [ 
       ./hardware-configuration.nix
       ./vm.nix
     ];
-  
+
   virtualisation.waydroid.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.extraEntries = {
+  "fydeos.conf" = ''
+    title   FydeOS
+    # This path is relative to the root of the EFI System Partition (/boot)
+    efi     /EFI/fydeos/bootx64.efi
+  '';
+};
+
   boot.supportedFilesystems.exfat = true;
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -37,8 +45,7 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
-  
-  services.getty.autologinUser = "ryuuma";
+
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -48,7 +55,7 @@
     layout = "us";
     variant = "";
   };
-  
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -61,7 +68,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ryuuma = {
     isNormalUser = true;
@@ -71,24 +78,49 @@
     packages = with pkgs; [ ];
   };
   
+  programs.fish = {
+  enable = true; 
+  # Use shellInit to define a Fish function for the tmc Flatpak command
+  shellInit = ''
+    function tmc
+      flatpak run fi.mooc.tmc.tmc-cli-rust $argv
+    end
+  '';
+};
+  
   # --- Enable Hyprland ---
   programs.hyprland = {
   	enable = true;
   	xwayland.enable = true;
   	withUWSM = true;
-  
+
   };
+  
+  hardware.graphics = {
+  enable = true;
+};
+
+# For Intel HD Graphics (Skylake/Gen9 or older)
+hardware.graphics.extraPackages = with pkgs; [
+  # Include vulkan drivers if not already
+  mesa
+  libva # For video acceleration 
+  libvdpau # For video acceleration
+];
+
+  programs.gamemode.enable = true;
   # Install firefox
   programs.firefox.enable = true;
   #steam
   programs.steam.enable = true;
-  #fish
-  programs.fish.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   #flatpak
   services.flatpak.enable = true;
+  #warp
+  services.cloudflare-warp.enable = true;
   
+
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
       nerd-fonts.fira-code
@@ -97,7 +129,7 @@
 
   # Enable font configuration
   fonts.fontconfig.enable = true;
-  
+
   environment.systemPackages = with pkgs; [
   # SILLLYYYY
   btop
@@ -105,50 +137,61 @@
   fastfetch
   sl
   cava
-  # UTIlities
+  # Toools
   vim
   git
   steam-run
+  appimage-run
   ntfs3g
   wget
   google-chrome
-  #dependencies
+  brave
+  cloudflare-warp
+  
+  python3
   meson
   ninja
   unzip
+  lzip
+  curl
   wlroots
   udev
   libinput
   gcc
   #  hyprland
-  hyprlock 
+  hyprlock
   hypridle
   hyprshot
-  hyprpaper
-  
+
   wlogout
-  swaylock-effects
   swaynotificationcenter
-  
+
   waybar
-  rofi-wayland 
-  
+  rofi-wayland
+
   kitty
   foot
- 
+
   pavucontrol
   blueman
   brightnessctl
   pamixer
   nwg-look
   networkmanagerapplet
-  
+
   swww
   pywal
   ranger
-  
+  vscodium
+
   #Themes
   bibata-cursors
+  
+  #Games
+  lutris
+  wineWowPackages.stable
+  winetricks
+  mangohud
   ];
 
   system.stateVersion = "25.05";
